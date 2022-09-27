@@ -1,0 +1,43 @@
+$light-color: #38AEbA;
+$dark-color: #0C4C66;
+$icon-color: #FFFFFF;
+$title-container-width: 200px;
+$title-container-border-length: 30px;
+$title-container-margin-left-offset: calc($title-container-width / 2) + $title-container-border-length;
+$title-container-border-radius: calc(calc($title-container-width / 2) + $title-container-border-length);
+
+:host {
+  height: 100%;
+  width: 100%;
+  display: flex;
+
+  .title-container {
+    height: $title-container-width;
+    width: $title-container-width;
+    border: $light-color $title-container-border-length solid;
+    border-radius: $title-container-border-radius;
+    align-self: center;
+    margin-left: calc(50% - $title-container-margin-left-offset);
+
+    &.portrait {
+      background: url(/assets/picture/mugshot.jpg) no-repeat center;
+      background-size: contain;
+    }
+  }
+
+  .category-title-container {
+    position: absolute;
+    color: $light-color;
+
+    .category-icon {
+      position: absolute;
+      height: $title-container-border-length;
+      width: $title-container-border-length;
+      padding: 5px;
+      box-sizing: border-box;
+    }
+    .category-name {
+      position: absolute;
+    }
+  }
+}
