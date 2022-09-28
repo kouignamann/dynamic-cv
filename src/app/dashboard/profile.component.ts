@@ -7,10 +7,10 @@ export var TITLE_CONTAINER_BORDER_LENGTH: number = 30;
 export var ROTATION_OFFSET: number = 0.75 * Math.PI;
 
 @Component({
-    templateUrl: 'dashboard.component.html',
-    styleUrls: ['dashboard.component.scss']
+    templateUrl: 'profile.component.html',
+    styleUrls: ['profile.component.scss']
 })
-export class DashboardComponent implements OnInit {
+export class ProfileComponent implements OnInit {
 
     public categories: Array<Category>;
     private innerWidth: any;
@@ -38,10 +38,10 @@ export class DashboardComponent implements OnInit {
         let titleCircleRadius = this.innerWidth * 0.4;
         let rotationThreshold = 2 * Math.PI / this.categories.length;
         this.categories.forEach((category, index) => {
-            category.iconPositionTop = topOffset - (iconCircleRadius * Math.sin((index * rotationThreshold) + ROTATION_OFFSET));
-            category.iconPositionLeft = leftOffset + (iconCircleRadius * Math.cos((index * rotationThreshold) + ROTATION_OFFSET));
-            category.titlePositionTop = topOffset - (titleCircleRadius * Math.sin((index * rotationThreshold) + ROTATION_OFFSET));
-            category.titlePositionLeft = leftOffset + (titleCircleRadius * Math.cos((index * rotationThreshold) + ROTATION_OFFSET));
+            // category.iconPositionTop = topOffset - (iconCircleRadius * Math.sin((index * rotationThreshold) + ROTATION_OFFSET));
+            // category.iconPositionLeft = leftOffset + (iconCircleRadius * Math.cos((index * rotationThreshold) + ROTATION_OFFSET));
+            // category.titlePositionTop = topOffset - (titleCircleRadius * Math.sin((index * rotationThreshold) + ROTATION_OFFSET));
+            // category.titlePositionLeft = leftOffset + (titleCircleRadius * Math.cos((index * rotationThreshold) + ROTATION_OFFSET));
         })
     }
 }

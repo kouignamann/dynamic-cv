@@ -1,3 +1,25 @@
-<div class="dynamic-cv-main-frame">
-    <router-outlet></router-outlet>
+<div class="main-frame">
+    <div class="left-frame">
+        <div class="mugshot-container">
+        </div>
+    </div>
+
+    <div class="right-frame">
+        <div class="navigation-bar"></div>
+        <div class="content-frame">
+            <router-outlet></router-outlet>
+        </div>
+        <div class="navigation-items">
+            <div *ngFor="let category of categories"
+                 class="navigation-item"
+                 [class.selected]="category.selected"
+                 (click)="selectCategory(category)">
+                <img class="category-icon" [src]="category.iconUrl">
+                <span class="category-name">{{category.name}}</span>
+                <svg style="margin-left: auto" width="50" height="50" viewBox="0 0 50 50">
+                    <polygon points="50,0 50,50 35,50"/>
+                </svg>
+            </div>
+        </div>
+    </div>
 </div>
